@@ -1,0 +1,28 @@
+--cpu Cortex-M0
+"lexilight_v3\startup_stm32f030x6.o"
+"lexilight_v3\main.o"
+"lexilight_v3\stm32f0xx_it.o"
+"lexilight_v3\stm32f0xx_hal_msp.o"
+"lexilight_v3\lexilight.o"
+"lexilight_v3\stm32f0xx_hal_adc.o"
+"lexilight_v3\stm32f0xx_hal_adc_ex.o"
+"lexilight_v3\stm32f0xx_hal_tim.o"
+"lexilight_v3\stm32f0xx_hal_tim_ex.o"
+"lexilight_v3\stm32f0xx_hal_usart.o"
+"lexilight_v3\stm32f0xx_hal_rcc.o"
+"lexilight_v3\stm32f0xx_hal_rcc_ex.o"
+"lexilight_v3\stm32f0xx_hal.o"
+"lexilight_v3\stm32f0xx_hal_i2c.o"
+"lexilight_v3\stm32f0xx_hal_i2c_ex.o"
+"lexilight_v3\stm32f0xx_hal_gpio.o"
+"lexilight_v3\stm32f0xx_hal_dma.o"
+"lexilight_v3\stm32f0xx_hal_cortex.o"
+"lexilight_v3\stm32f0xx_hal_pwr.o"
+"lexilight_v3\stm32f0xx_hal_pwr_ex.o"
+"lexilight_v3\stm32f0xx_hal_flash.o"
+"lexilight_v3\stm32f0xx_hal_flash_ex.o"
+"lexilight_v3\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "lexilight_v3\lexilight_v3.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "lexilight_v3.map" -o lexilight_v3\lexilight_v3.axf
