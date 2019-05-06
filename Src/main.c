@@ -127,10 +127,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+		//Pause 20ms
+		HAL_Delay(20);
+		
+		//Lexiligh_Main_Task
+		Lexi_Task (htim3, htim14, ADC_raw);
+		
+		//Check Bouton ON_OFF
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))  //Detect Push
+		{
+			while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){}	//Wait for Pull
+			Lexi_Switch_State_On_Off();	//When detect push, switch state light ON OFF (view detail in lexilight.c)
+		}
+		
+		//Check Bouton Capatitive
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3))  //Detect Push
+		{
+			while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3)){} //Wait for Pull
+			Lexi_Switch_Lum_Level();	//When detect push, switch level luminosity (view detail in lexilight.c)
+		}
   }
+	/* USER CODE END WHILE */
+	
+	/* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 

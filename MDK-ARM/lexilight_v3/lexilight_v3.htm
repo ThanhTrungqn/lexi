@@ -3,7 +3,7 @@
 <title>Static Call Graph - [lexilight_v3\lexilight_v3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image lexilight_v3\lexilight_v3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon May 06 15:37:04 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon May 06 15:50:12 2019
 <BR><P>
 <H3>Maximum Stack Usage =        580 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -148,9 +148,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_uidivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Enable
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConfigChannel
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Update_Frequency
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Update_Duty
-<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConfigChannel
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
@@ -160,9 +160,9 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[55]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
+<BR><BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
 </UL>
 
 <P><STRONG><a name="[74]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
@@ -291,8 +291,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
 </UL>
 
 <P><STRONG><a name="[32]"></a>HAL_GPIO_Init</STRONG> (Thumb, 302 bytes, Stack size 24 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_Init))
@@ -309,8 +309,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
 </UL>
 
 <P><STRONG><a name="[2b]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f0xx_hal.o(i.HAL_GetTick))
@@ -539,8 +539,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5a]"></a>Lexi_Init_Data</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, lexilight.o(i.Lexi_Init_Data))
-<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
 </UL>
 
 <P><STRONG><a name="[6b]"></a>Lexi_Switch_Lum_Level</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lexilight.o(i.Lexi_Switch_Lum_Level))
@@ -554,12 +554,12 @@ Global Symbols
 <P><STRONG><a name="[58]"></a>Lexi_Task</STRONG> (Thumb, 302 bytes, Stack size 152 bytes, lexilight.o(i.Lexi_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 332<LI>Call Chain = Lexi_Task &rArr; Lexi_DO_ADC_PWM &rArr; Lexi_Update_Frequency &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Init_Data
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_PWM_LUM_DRIVER
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Init_Data
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -581,7 +581,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f030x6.o(RESET)
 </UL>
-<P><STRONG><a name="[65]"></a>SystemClock_Config</STRONG> (Thumb, 86 bytes, Stack size 96 bytes, main.o(i.SystemClock_Config))
+<P><STRONG><a name="[65]"></a>SystemClock_Config</STRONG> (Thumb, 98 bytes, Stack size 96 bytes, main.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -629,18 +629,13 @@ Global Symbols
 <P><STRONG><a name="[1a]"></a>main</STRONG> (Thumb, 348 bytes, Stack size 248 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 580<LI>Call Chain = main &rArr; Lexi_Task &rArr; Lexi_DO_ADC_PWM &rArr; Lexi_Update_Frequency &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Switch_State_On_Off
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Switch_Lum_Level
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Init_Data
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_USART_Init
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_USART_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM3_Init
@@ -648,6 +643,11 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM14_Init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC_Init
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Task
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Switch_State_On_Off
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Switch_Lum_Level
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_Init_Data
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
@@ -655,6 +655,22 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
+<P><STRONG><a name="[56]"></a>Lexi_Update_Duty</STRONG> (Thumb, 58 bytes, Stack size 32 bytes, lexilight.o(i.Lexi_Update_Duty))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Lexi_Update_Duty &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
+</UL>
+
+<P><STRONG><a name="[57]"></a>Lexi_Update_Frequency</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, lexilight.o(i.Lexi_Update_Frequency))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Lexi_Update_Frequency &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
+</UL>
+
 <P><STRONG><a name="[5d]"></a>MX_ADC_Init</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, main.o(i.MX_ADC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = MX_ADC_Init &rArr; HAL_ADC_Init &rArr; HAL_ADC_MspInit &rArr; HAL_DMA_Init &rArr; DMA_CalcBaseAndBitshift &rArr; __aeabi_uidivmod
 </UL>
@@ -667,8 +683,8 @@ Local Symbols
 <P><STRONG><a name="[5e]"></a>MX_GPIO_Init</STRONG> (Thumb, 96 bytes, Stack size 40 bytes, main.o(i.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -709,22 +725,6 @@ Local Symbols
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[56]"></a>Lexi_Update_Duty</STRONG> (Thumb, 58 bytes, Stack size 32 bytes, lexilight.o(i.Lexi_Update_Duty))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Lexi_Update_Duty &rArr; __aeabi_uidivmod
-</UL>
-<BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-</UL>
-<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
-</UL>
-
-<P><STRONG><a name="[57]"></a>Lexi_Update_Frequency</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, lexilight.o(i.Lexi_Update_Frequency))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Lexi_Update_Frequency &rArr; __aeabi_uidivmod
-</UL>
-<BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-</UL>
-<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lexi_DO_ADC_PWM
 </UL>
 
 <P><STRONG><a name="[1d]"></a>ADC_DMAConvCplt</STRONG> (Thumb, 108 bytes, Stack size 8 bytes, stm32f0xx_hal_adc.o(i.ADC_DMAConvCplt))

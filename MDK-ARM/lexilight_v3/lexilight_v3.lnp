@@ -1,9 +1,9 @@
 --cpu Cortex-M0
 "lexilight_v3\startup_stm32f030x6.o"
+"lexilight_v3\lexilight.o"
 "lexilight_v3\main.o"
 "lexilight_v3\stm32f0xx_it.o"
 "lexilight_v3\stm32f0xx_hal_msp.o"
-"lexilight_v3\lexilight.o"
 "lexilight_v3\stm32f0xx_hal_adc.o"
 "lexilight_v3\stm32f0xx_hal_adc_ex.o"
 "lexilight_v3\stm32f0xx_hal_tim.o"
