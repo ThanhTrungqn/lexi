@@ -22,7 +22,7 @@
 "lexilight_v3\stm32f0xx_hal_flash.o"
 "lexilight_v3\stm32f0xx_hal_flash_ex.o"
 "lexilight_v3\system_stm32f0xx.o"
---library_type=microlib --strict --scatter "lexilight_v3\lexilight_v3.sct"
+--strict --scatter "lexilight_v3\lexilight_v3.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "lexilight_v3.map" -o lexilight_v3\lexilight_v3.axf

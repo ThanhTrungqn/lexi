@@ -132,24 +132,37 @@ int main(void)
 		
 		//Lexiligh_Main_Task
 		Lexi_Task (htim3, htim14, ADC_raw);
-		
 		//Check Bouton ON_OFF
-		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))  //Detect Push
+		
+		if (!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))  //Detect Push
 		{
-			while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){}	//Wait for Pull
-			Lexi_Switch_State_On_Off();	//When detect push, switch state light ON OFF (view detail in lexilight.c)
+			//If push, get time now
+			Lexi_RecordTime_ON_OFF_Start();
+			while(!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){
+				Lexi_RecordTime_ON_OFF_End();
+				if ( Lexi_Detect_Long_Push_ON_OFF() ){
+					//Turn Off
+					Lexi_Switch_State_On_Off(htim1, htim3);
+				}
+			}	//Wait for Pull
+			if ( !Lexi_Detect_Long_Push_ON_OFF() )
+			{
+				Lexi_Switch_State_On_Off(htim1, htim3);	//When detect push, switch state light ON OFF (view detail in lexilight.c)
+			}
 		}
 		
 		//Check Bouton Capatitive
+		
 		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3))  //Detect Push
 		{
 			while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3)){} //Wait for Pull
 			Lexi_Switch_Lum_Level();	//When detect push, switch level luminosity (view detail in lexilight.c)
 		}
+		
   }
-	/* USER CODE END WHILE */
-	
-	/* USER CODE BEGIN 3 */
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 
@@ -252,7 +265,7 @@ static void MX_ADC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN ADC_Init 2 */
-
+	HAL_ADCEx_Calibration_Start(&hadc);
   /* USER CODE END ADC_Init 2 */
 
 }
@@ -490,10 +503,16 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PA0 PA3 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_3;
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB3 */

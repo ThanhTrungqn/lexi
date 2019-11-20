@@ -33,3 +33,4 @@ lexilight_v3\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 lexilight_v3\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart.h
 lexilight_v3\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart_ex.h
 lexilight_v3\main.o: ../Inc/lexilight.h
+lexilight_v3\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
